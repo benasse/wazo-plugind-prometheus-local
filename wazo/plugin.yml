@@ -1,0 +1,7 @@
+name: wazo-plugind-prometheus
+namespace: potoo
+version: 0.0.1
+author: Benoît Stahl
+display_name: wazo-plugind-prometheus-local
+description: This plugin enable and expose asterisk's prometheus endpoint 
+homepage: https://github.com/benasse/wazo-plugind-prometheus-local

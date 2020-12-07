@@ -1,0 +1,26 @@
+#!/bin/sh
+# Copyright 2020 Benoît Stahl
+# SPDX-License-Identifier: GPL-3.0+
+
+case "$1" in
+    build)
+        ;;
+
+    package)
+	cp -R etc ${pkgdir}
+        ;;
+
+    install)
+	asterisk -rx 'module load res_prometheus.so'
+        ;;
+
+    uninstall)
+	asterisk -rx 'module unload res_prometheus.so'
+	rm -Rf /etc/asterisk/prometheus.conf
+        ;;
+
+    *)
+        echo "$0 called with unknown argument '$1'" >&2
+        exit 1
+    ;;
+esac
